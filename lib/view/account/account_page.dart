@@ -5,6 +5,7 @@ import 'package:flutter_sns/model/post.dart';
 import 'package:flutter_sns/utils/authentication.dart';
 import 'package:flutter_sns/utils/firestore/posts.dart';
 import 'package:flutter_sns/utils/firestore/users.dart';
+import 'package:flutter_sns/utils/widget_utils.dart';
 import 'package:flutter_sns/view/account/edit_account_page.dart';
 import 'package:intl/intl.dart';
 
@@ -198,7 +199,8 @@ class _AccountPageState extends State<AccountPage> {
                                     },
                                   );
                                 } else {
-                                  return Container();
+                                  return WidgetUtils()
+                                      .createProgressIndicator();
                                 }
                               });
                         } else {
@@ -212,3 +214,11 @@ class _AccountPageState extends State<AccountPage> {
     ));
   }
 }
+
+// Widget createProgressIndicator() {
+//   return Container(
+//       alignment: Alignment.center,
+//       child: const CircularProgressIndicator(
+//         color: Colors.green,
+//       ));
+// }

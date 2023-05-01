@@ -5,6 +5,7 @@ import 'package:flutter_sns/model/account.dart';
 import 'package:flutter_sns/model/post.dart';
 import 'package:flutter_sns/utils/firestore/posts.dart';
 import 'package:flutter_sns/utils/firestore/users.dart';
+import 'package:flutter_sns/utils/widget_utils.dart';
 import 'package:flutter_sns/view/timeline/post_page.dart';
 import 'package:intl/intl.dart';
 
@@ -140,7 +141,7 @@ class _TimelinePageState extends State<TimelinePage> {
                             );
                           });
                     } else {
-                      return Container();
+                      return WidgetUtils().createProgressIndicator();
                     }
                   });
             } else {
